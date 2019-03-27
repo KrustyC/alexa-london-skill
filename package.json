@@ -1,0 +1,25 @@
+{
+  "name": "london-routes",
+  "version": "1.0.0",
+  "description": "Alexa Skill to proivde info regarding buses",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "zip": "./bin/zip.sh"
+  },
+  "author": "Davide Crestini <davide.crestini94@gmail.com> (http://dcrestini.me/)",
+  "dependencies": {
+    "ask-sdk": "^2.5.1",
+    "prettier": "^1.16.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
