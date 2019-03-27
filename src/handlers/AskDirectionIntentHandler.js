@@ -25,8 +25,8 @@ const AskDirectionIntentHandler = {
     );
 
     const speechData = busesLiveData.map(
-      ({ lineName, stopName, leavesIn, direction }) => {
-        return `the next ${lineName} to ${direction} will arrive at ${stopName} in ${leavesIn}`;
+      ({ lineName, leavesIn, direction }) => {
+        return `the next ${lineName} to ${direction} will arrive in ${leavesIn}`;
       }
     );
 
