@@ -1,4 +1,4 @@
-import Alexa from 'ask-sdk-core';
+import * as Alexa from 'ask-sdk-core';
 import {
   AskDirectionIntentHandler,
   CancelAndStopIntentHandler,
@@ -16,4 +16,5 @@ exports.handler = Alexa.SkillBuilders.custom()
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
   )
+  .addErrorHandlers(ErrorHandler)
   .lambda();

@@ -8,4 +8,4 @@ fi
 yarn install
 yarn build
 
-zip -r london-routes.zip  dist package.json node_modules
+zip -r london-routes.zip  dist/* package.json node_modules
