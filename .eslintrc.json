@@ -5,6 +5,7 @@
   "rules": {
     "prettier/prettier": ["error"],
     "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error"
   },

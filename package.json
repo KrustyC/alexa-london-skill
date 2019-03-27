@@ -12,7 +12,9 @@
   "dependencies": {
     "ask-sdk": "^2.5.1",
     "ask-sdk-core": "^2.5.1",
-    "ask-sdk-model": "^1.13.0"
+    "ask-sdk-model": "^1.13.0",
+    "moment": "^2.24.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

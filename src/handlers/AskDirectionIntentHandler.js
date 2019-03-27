@@ -1,3 +1,7 @@
+import API from '../helpers/api';
+
+const api = new API();
+
 const AskDirectionIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -5,20 +9,32 @@ const AskDirectionIntentHandler = {
       handlerInput.requestEnvelope.request.intent.name === 'AskDirectionIntent'
     );
   },
-  handle(handlerInput) {
+  async handle(handlerInput) {
     const {
       slots: { busStop, busNumber },
     } = handlerInput.requestEnvelope.request.intent;
 
-    const { value: bus } = busNumber;
+    const { value: place } = busStop;
+    const { value: bus = null } = busNumber;
 
-    const { value: stop } = busStop;
+    const busStopInfo = await api.retrieveBusStopId(place);
 
-    const speechText = `The next ${bus} is gonna be at ${stop} in 5 minutes`;
+    const busesLiveData = await api.retrieveBusStopLiveData(
+      busStopInfo.atcocode,
+      bus
+    );
+
+    const speechData = busesLiveData.map(
+      ({ lineName, stopName, leavesIn, direction }) => {
+        return `the next ${lineName} to ${direction} will arrive at ${stopName} in ${leavesIn}`;
+      }
+    );
+
+    const speechText = speechData.join(' while ');
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Bus Information', speechText)
       .getResponse();
   },
 };
