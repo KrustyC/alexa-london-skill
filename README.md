@@ -1,2 +1,2 @@
 # alexa-london-skill
-Alexa Skill to proivde info regarding buses
+Alexa Skill to provide info regarding buses
